@@ -5,51 +5,70 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView layoutX="116.0">
+      <ImageView layoutX="164.0">
          <image>
             <Image url="@../../Desktop/RopeFullBodyDead.png" />
          </image>
       </ImageView>
-      <ProgressBar layoutX="52.0" layoutY="172.0" prefWidth="200.0" progress="0.0" />
-      <Button layoutX="45.0" layoutY="289.0" mnemonicParsing="false" text="New Game" />
-      <Button layoutX="177.0" layoutY="289.0" mnemonicParsing="false" text="Give Hint" />
-      <TextField layoutX="78.0" layoutY="204.0" />
-      <HBox layoutX="7.0" layoutY="229.0" prefHeight="26.0" prefWidth="304.0">
+      <ProgressBar layoutX="101.0" layoutY="172.0" prefWidth="200.0" progress="0.0" />
+      <Button layoutX="64.0" layoutY="330.0" mnemonicParsing="false" text="New Game" />
+      <Button layoutX="257.0" layoutY="330.0" mnemonicParsing="false" text="Give Hint" />
+      <TextField layoutX="-2.0" layoutY="190.0" maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="401.0" />
+      <GridPane layoutX="13.0" layoutY="254.0" prefWidth="374.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" text="A" />
-            <Button mnemonicParsing="false" text="B" />
-            <Button mnemonicParsing="false" text="C" />
-            <Button mnemonicParsing="false" text="D" />
-            <Button mnemonicParsing="false" text="E" />
-            <Button mnemonicParsing="false" text="F" />
-            <Button mnemonicParsing="false" text="G" />
-            <Button mnemonicParsing="false" text="H" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="I" />
-            <Button mnemonicParsing="false" text="J" />
-            <Button mnemonicParsing="false" text="L" />
-            <Button mnemonicParsing="false" text="M" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="A" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="B" GridPane.columnIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="C" GridPane.columnIndex="2" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="D" GridPane.columnIndex="3" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="E" GridPane.columnIndex="4" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="F" GridPane.columnIndex="5" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="G" GridPane.columnIndex="6" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="H" GridPane.columnIndex="7" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="I" GridPane.columnIndex="8" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="J" GridPane.columnIndex="9" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="K" GridPane.columnIndex="10" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="L" GridPane.columnIndex="11" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="M" GridPane.columnIndex="12" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="X" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="N" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="O" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="P" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Q" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="R" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="S" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="T" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="U" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="V" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="W" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Y" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Z" GridPane.columnIndex="12" GridPane.rowIndex="1" />
          </children>
-      </HBox>
-      <HBox layoutX="7.0" layoutY="255.0" prefHeight="26.0" prefWidth="304.0">
-         <children>
-            <Button mnemonicParsing="false" text="N" />
-            <Button mnemonicParsing="false" text="O" />
-            <Button mnemonicParsing="false" text="P" />
-            <Button mnemonicParsing="false" text="Q" />
-            <Button mnemonicParsing="false" text="R" />
-            <Button mnemonicParsing="false" text="S" />
-            <Button mnemonicParsing="false" text="T" />
-            <Button mnemonicParsing="false" text="U" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="V" />
-            <Button mnemonicParsing="false" text="W" />
-            <Button mnemonicParsing="false" text="X" />
-            <Button mnemonicParsing="false" text="Y" />
-         </children>
-      </HBox>
+      </GridPane>
    </children>
 </Pane>
