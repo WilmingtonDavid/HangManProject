@@ -2,10 +2,16 @@ package com.example.hangman;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.*;
 
 
@@ -17,6 +23,10 @@ public class HangManController {
     private String wordToGuess = wordAndHint[0];
     private String hint = wordAndHint[1];
     private int counterForLoss = 0;
+
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
 
     private String printedWord; // The printed word is the character array converted to a string.
     char[] currentPlaceHolder = generatePlaceHolder(wordToGuess); // Generates a blank placeholder for the word.
@@ -135,6 +145,8 @@ public class HangManController {
     public char[] checkGuess(String wordToGuess, char letterToGuess, char[] currentPlaceHolder) {
         // Variable to determine if the player had a wrong guess.
         boolean isWrong = true;
+        boolean gameWon = false;
+
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == letterToGuess) {
                 currentPlaceHolder[i] = letterToGuess;
@@ -142,18 +154,27 @@ public class HangManController {
             }
         }
 
-        if(isWrong){
+        if (isWrong) {
             // If the guess is wrong, add one to the counter and adjust the image accordingly.
             counterForLoss++;
             checkStatus(counterForLoss);
         }
+
+        /* In the case the counter reaches 8 guesses, the player loses the game.*/
+        if( counterForLoss >= 8){
+            removeOrAddAllButtons(false);
+            for(int j = 0; j < wordToGuess.length(); j++){
+                currentPlaceHolder[j] = wordToGuess.charAt(j);
+            }
+        }
+
         return currentPlaceHolder;
     }
 
     /* This method takes the wrong guesses counter, and puts up the appropriate image of the hangman based on
-    * the counter.*/
-    private void checkStatus(int counter){
-        switch(counter){
+     * the counter.*/
+    private void checkStatus(int counter) {
+        switch (counter) {
             case 1:
                 startingHangman.setVisible(false);
                 hangman1.setVisible(true);
@@ -191,16 +212,48 @@ public class HangManController {
         }
     }
 
-
     /* This method takes the current placeholder, converts it to a string, and then displays it in the text box.*/
     private void displayWord(char[] currentPlaceHolder) {
         printedWord = new String(currentPlaceHolder);
         wordToGuessTextField.setText(printedWord);
     }
 
+    /* This method will add or remove all buttons based on the true or false given as a parameter.*/
+    private void removeOrAddAllButtons(boolean gameStatus) {
+        letterAButton.setVisible(gameStatus);
+        letterBButton.setVisible(gameStatus);
+        letterCButton.setVisible(gameStatus);
+        letterDButton.setVisible(gameStatus);
+        letterEButton.setVisible(gameStatus);
+        letterFButton.setVisible(gameStatus);
+        letterGButton.setVisible(gameStatus);
+        letterHButton.setVisible(gameStatus);
+        letterIButton.setVisible(gameStatus);
+        letterJButton.setVisible(gameStatus);
+        letterKButton.setVisible(gameStatus);
+        letterLButton.setVisible(gameStatus);
+        letterMButton.setVisible(gameStatus);
+        letterNButton.setVisible(gameStatus);
+        letterOButton.setVisible(gameStatus);
+        letterPButton.setVisible(gameStatus);
+        letterQButton.setVisible(gameStatus);
+        letterRButton.setVisible(gameStatus);
+        letterSButton.setVisible(gameStatus);
+        letterTButton.setVisible(gameStatus);
+        letterUButton.setVisible(gameStatus);
+        letterVButton.setVisible(gameStatus);
+        letterWButton.setVisible(gameStatus);
+        letterXButton.setVisible(gameStatus);
+        letterYButton.setVisible(gameStatus);
+        letterZButton.setVisible(gameStatus);
+    }
+
 
     @FXML
     private ImageView finalDeathImage;
+
+    @FXML
+    private TextField winLossTextField;
 
     @FXML
     private ImageView hangman1;
@@ -487,7 +540,43 @@ public class HangManController {
 
     @FXML
     void newGameOnPress(ActionEvent event) {
+        //set the wordAndHint to a new word from the dictionary and re-assign the word and hint.
+        wordAndHint = generateString();
+        wordToGuess = wordAndHint[0];
+        hint = wordAndHint[1];
+        counterForLoss = 0;
 
+        // Sets the hangman images and the text fields back to their original position.
+        startingHangman.setVisible(true);
+        hangman1.setVisible(false);
+        hangman2.setVisible(false);
+        hangman3.setVisible(false);
+        hangman4.setVisible(false);
+        hangman5.setVisible(false);
+        hangman6.setVisible(false);
+        hangman7.setVisible(false);
+        finalDeathImage.setVisible(false);
+        winLossTextField.setVisible(false);
+        hintTextField.setVisible(false);
+        // Adds all buttons back to original position.
+        removeOrAddAllButtons(true);
+
+        // Displays the word in the text field.
+        currentPlaceHolder = generatePlaceHolder(wordToGuess);
+        printedWord = new String(currentPlaceHolder);
+        wordToGuessTextField.setText(printedWord);
+
+    }
+
+    @FXML
+    public void GameBack2Menu(ActionEvent event) throws IOException {
+        //goes from the game screen to the menu screen
+        root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Menu");
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void initialize() {
