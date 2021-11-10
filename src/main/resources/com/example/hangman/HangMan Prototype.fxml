@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hangman.HangManController">
+   <children>
+      <ImageView fitHeight="382.0" fitWidth="401.0">
+         <image>
+            <Image url="@PaneColor.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#newGameOnPress" text="New Game" />
+      <Button layoutX="30.0" layoutY="328.0" mnemonicParsing="false" onAction="#giveHintOnPress" text="Give Hint" />
+      <TextField fx:id="wordToGuessTextField" alignment="CENTER" editable="false" layoutX="-2.0" layoutY="190.0" maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="401.0">
+         <font>
+            <Font size="24.0" />
+         </font></TextField>
+      <GridPane layoutX="13.0" layoutY="254.0" prefWidth="374.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="5.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="letterAButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterAOnPress" text="A" />
+            <Button fx:id="letterBButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterBOnPress" text="B" GridPane.columnIndex="1" />
+            <Button fx:id="letterCButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterCOnPress" text="C" GridPane.columnIndex="2" />
+            <Button fx:id="letterDButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterDOnPress" text="D" GridPane.columnIndex="3" />
+            <Button fx:id="letterEButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterEOnPress" text="E" GridPane.columnIndex="4" />
+            <Button fx:id="letterFButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterFOnPress" text="F" GridPane.columnIndex="5" />
+            <Button fx:id="letterGButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterGOnPress" text="G" GridPane.columnIndex="6" />
+            <Button fx:id="letterHButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterHOnPress" text="H" GridPane.columnIndex="7" />
+            <Button fx:id="letterIButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterIOnPress" prefHeight="26.0" prefWidth="26.0" text="I" GridPane.columnIndex="8" />
+            <Button fx:id="letterJButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterJOnPress" text="J" GridPane.columnIndex="9" />
+            <Button fx:id="letterKButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterKOnPress" text="K" GridPane.columnIndex="10" />
+            <Button fx:id="letterLButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterLOnPress" text="L" GridPane.columnIndex="11" />
+            <Button fx:id="letterMButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterMOnPress" text="M" GridPane.columnIndex="12" />
+            <Button fx:id="letterXButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterXOnPress" text="X" GridPane.columnIndex="10" GridPane.rowIndex="1" />
+            <Button fx:id="letterNButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterNOnPress" text="N" GridPane.rowIndex="1" />
+            <Button fx:id="letterOButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterOOnPress" text="O" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="letterPButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterPOnPress" text="P" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="letterQButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterQOnPress" text="Q" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="letterRButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterROnPress" text="R" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="letterSButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterSOnPress" text="S" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button fx:id="letterTButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterTOnPress" text="T" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button fx:id="letterUButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterUOnPress" text="U" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button fx:id="letterVButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterVOnPress" text="V" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button fx:id="letterWButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterWOnPress" text="W" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button fx:id="letterYButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterYOnPress" text="Y" GridPane.columnIndex="11" GridPane.rowIndex="1" />
+            <Button fx:id="letterZButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterZOnPress" text="Z" GridPane.columnIndex="12" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <ImageView fx:id="finalDeathImage" layoutX="162.0">
+         <image>
+            <Image url="@RopeFullBodyDead.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="353.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayInstructionsOnPress" text="?" />
+      <TextField fx:id="hintTextField" editable="false" layoutX="113.0" layoutY="328.0" prefHeight="25.0" prefWidth="270.0" visible="false" />
+      <ImageView fx:id="finalDeathImage" fitHeight="146.0" fitWidth="144.0" layoutX="129.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Death.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman7" fitHeight="146.0" fitWidth="144.0" layoutX="128.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Seven.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman6" fitHeight="146.0" fitWidth="144.0" layoutX="130.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Six.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman5" fitHeight="146.0" fitWidth="150.0" layoutX="129.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Five.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman4" fitHeight="146.0" fitWidth="150.0" layoutX="128.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Four.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman3" fitHeight="146.0" fitWidth="150.0" layoutX="130.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Three.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman2" fitHeight="146.0" fitWidth="150.0" layoutX="130.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20Two.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hangman1" fitHeight="146.0" fitWidth="150.0" layoutX="130.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@Hangman%20One.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="startingHangman" fitHeight="146.0" fitWidth="150.0" layoutX="130.0" layoutY="27.0">
+         <image>
+            <Image url="@Hangman%20Start.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

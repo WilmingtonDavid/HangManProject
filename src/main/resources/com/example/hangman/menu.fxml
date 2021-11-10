@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hangman.menuController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@slowsnow.gif" />
+         </image>
+      </ImageView>
+      <Label layoutX="41.0" layoutY="13.0" text="HangMan Christmas Edition!" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+      <Button layoutX="41.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToGame" text="Play Game!" />
+      <Button layoutX="256.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToHelp" text="How To Play!" />
+      <ImageView fitHeight="197.0" fitWidth="200.0" layoutX="199.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@snowman.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
