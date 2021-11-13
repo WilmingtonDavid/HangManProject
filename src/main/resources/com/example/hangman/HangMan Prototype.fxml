@@ -72,12 +72,6 @@
             <Button fx:id="letterZButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#letterZOnPress" text="Z" GridPane.columnIndex="12" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <ImageView fx:id="finalDeathImage" layoutX="162.0">
-         <image>
-            <Image url="@RopeFullBodyDead.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="353.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayInstructionsOnPress" text="?" />
       <TextField fx:id="hintTextField" editable="false" layoutX="113.0" layoutY="328.0" prefHeight="25.0" prefWidth="270.0" visible="false" />
       <ImageView fx:id="finalDeathImage" fitHeight="146.0" fitWidth="144.0" layoutX="129.0" layoutY="27.0" visible="false">
          <image>
@@ -129,5 +123,11 @@
             <Font size="24.0" />
          </font>
       </TextField>
+      <ImageView fx:id="HangManWin" fitHeight="146.0" fitWidth="150.0" layoutX="130.0" layoutY="27.0" visible="false">
+         <image>
+            <Image url="@HangManWin%20Screen.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="294.0" layoutY="15.0" mnemonicParsing="false" onAction="#GameBack2Menu" text="Back to Menu!" />
    </children>
 </Pane>

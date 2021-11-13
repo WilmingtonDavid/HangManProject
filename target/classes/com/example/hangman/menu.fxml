@@ -20,7 +20,7 @@
          </font></Label>
       <Button layoutX="41.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToGame" text="Play Game!" />
       <Button layoutX="256.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToHelp" text="How To Play!" />
-      <ImageView fitHeight="197.0" fitWidth="200.0" layoutX="199.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="197.0" fitWidth="200.0" layoutX="116.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@snowman.png" />
          </image>

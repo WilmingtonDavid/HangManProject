@@ -7,24 +7,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hangman.menuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="382.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hangman.menuController">
    <children>
-      <ImageView fitHeight="475.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="391.0" fitWidth="413.0">
          <image>
-            <Image url="@blue1.jpg" />
+            <Image url="@PaneColor.png" />
          </image>
       </ImageView>
-      <Label layoutX="220.0" layoutY="14.0" text="Hangman Rules">
+      <ImageView fitHeight="475.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Blue.jpeg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="122.0" layoutY="14.0" text="Hangman Rules">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Button layoutX="254.0" layoutY="361.0" mnemonicParsing="false" onAction="#helpBackToMenu" text="Back to Menu!" />
-      <Label fx:id="lblRules" layoutX="214.0" layoutY="115.0" wrapText="true">
+      <Button layoutX="153.0" layoutY="327.0" mnemonicParsing="false" onAction="#helpBackToMenu" text="Back to Menu!" />
+      <Label fx:id="lblRules" layoutX="4.0" layoutY="48.0" prefHeight="267.0" prefWidth="392.0" text="Rule 1: All words to guess are Christmas themed.&#10;Rule 2: You have 8 guesses before you lose the game. &#10;Rule 3: Press letters on the screen to fill in the blanks. &#10;Rule 4: You have one hint per word to guess. &#10;Rule 5: If you want to start a new game press the &quot;new game&quot; button." wrapText="true">
          <font>
-            <Font size="23.0" />
+            <Font size="19.0" />
          </font>
       </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@wreath.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -17,8 +17,8 @@ import java.util.*;
 
 public class HangManController {
 
-    /* The following three variables are final and should never be changed. The first is to generate a random word
-     * and the corresponding hint. The next two are the word and hint put into variables. */
+    /* he first variable is to generate a random word and the corresponding hint. The next two are the word
+    and hint put into variables. The last is the counter to keep track of wrong guesses. */
     private String[] wordAndHint = generateString();
     private String wordToGuess = wordAndHint[0];
     private String hint = wordAndHint[1];
@@ -38,7 +38,7 @@ public class HangManController {
 
         //Start Dictionary (Put words and hints inside here please. Words should be all caps.)
         wordDictionary.put("WOOD", " Used to build things ");
-        wordDictionary.put("SNOW", " A cold percipitation ");
+        wordDictionary.put("SNOW", " A cold precipitation ");
         wordDictionary.put("ICE SKATING", " Physical activity in winter ");
         wordDictionary.put("HOT CHOCOLATE", " A warm sweet drink ");
         wordDictionary.put("APPLE CIDER", " A warm sweet drink ");
@@ -57,7 +57,7 @@ public class HangManController {
         wordDictionary.put("LIGHTS", " Decorate the tree with ");
         wordDictionary.put("COOKIES AND MILK", " Leave for Santa ");
         wordDictionary.put("ORNAMENTS", " Decorate the tree with ");
-        wordDictionary.put("STORY BOOK", " Keeps Chrsitmas legends ");
+        wordDictionary.put("STORY BOOK", " Keeps Christmas legends ");
         wordDictionary.put("CAROLERS", " Singing visitors ");
         wordDictionary.put("SNOWBALL FIGHT", " Fun sport in the snow ");
         wordDictionary.put("WRAPPING PAPER", " Decorate gifts with ");
@@ -88,7 +88,7 @@ public class HangManController {
         wordDictionary.put("PARADE", " Public tradition to celebrate ");
         wordDictionary.put("PEPPERMINT", " A scent or candy ");
         wordDictionary.put("PARTY", " A gathering for people ");
-        wordDictionary.put("POINSETTIA", " A plant associated with Chrristmas ");
+        wordDictionary.put("POINSETTIA", " A plant associated with Christmas ");
         wordDictionary.put("THE GRINCH", " Holiday killjoy ");
         wordDictionary.put("SNOW ANGEL", " Made in the snow ");
         wordDictionary.put("STAR", " In the sky or to top a tree ");
@@ -130,6 +130,7 @@ public class HangManController {
     public static char[] generatePlaceHolder(String wordToGuess) {
         char[] placeHolderArray = new char[wordToGuess.length()];
 
+        // If a space is in the String, a space will go in the array, other wise, a dash will be put in the array.
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == ' ') {
                 placeHolderArray[i] = ' ';
@@ -145,8 +146,9 @@ public class HangManController {
     public char[] checkGuess(String wordToGuess, char letterToGuess, char[] currentPlaceHolder) {
         // Variable to determine if the player had a wrong guess.
         boolean isWrong = true;
-        boolean gameWon = false;
 
+        // Checks if the letter being guesses is in the word, and if it is, we change the isWrong variable to false,
+        // and then add the letter to the standing character array.
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == letterToGuess) {
                 currentPlaceHolder[i] = letterToGuess;
@@ -160,19 +162,29 @@ public class HangManController {
             checkStatus(counterForLoss);
         }
 
-        /* In the case the counter reaches 8 guesses, the player loses the game.*/
-        if( counterForLoss >= 8){
+        // Takes the current placeholder and creates a string to compare to the actual word.
+        String stringToCheck = new String(currentPlaceHolder);
+
+        /* In the case the counter reaches 8 guesses, the player loses the game. Else, if the word is complete,
+         * we remove all the buttons and put up the win screen.*/
+        if (counterForLoss >= 8) {
             removeOrAddAllButtons(false);
-            for(int j = 0; j < wordToGuess.length(); j++){
+            for (int j = 0; j < wordToGuess.length(); j++) {
+                // Changes placeholder to the actual word in the event of a loss.
                 currentPlaceHolder[j] = wordToGuess.charAt(j);
             }
+        } else if (stringToCheck.equals(wordToGuess)) {
+            // GAME WON CONDITION. Removes all buttons and puts up the appropriate image.
+            removeOrAddAllButtons(false);
+            checkStatus(9);
         }
 
+        // Returns the character array to be used for the next guess.
         return currentPlaceHolder;
     }
 
     /* This method takes the wrong guesses counter, and puts up the appropriate image of the hangman based on
-     * the counter.*/
+     * the counter. Case 9 will be in the case of the user winning.*/
     private void checkStatus(int counter) {
         switch (counter) {
             case 1:
@@ -207,6 +219,17 @@ public class HangManController {
                 hangman7.setVisible(false);
                 finalDeathImage.setVisible(true);
                 break;
+            case 9:
+                hangman1.setVisible(false);
+                hangman2.setVisible(false);
+                hangman3.setVisible(false);
+                hangman4.setVisible(false);
+                hangman5.setVisible(false);
+                hangman6.setVisible(false);
+                hangman7.setVisible(false);
+                startingHangman.setVisible(false);
+                HangManWin.setVisible(true);
+                break;
 
 
         }
@@ -216,6 +239,7 @@ public class HangManController {
     private void displayWord(char[] currentPlaceHolder) {
         printedWord = new String(currentPlaceHolder);
         wordToGuessTextField.setText(printedWord);
+
     }
 
     /* This method will add or remove all buttons based on the true or false given as a parameter.*/
@@ -248,6 +272,9 @@ public class HangManController {
         letterZButton.setVisible(gameStatus);
     }
 
+
+    @FXML
+    private ImageView HangManWin;
 
     @FXML
     private ImageView finalDeathImage;
@@ -359,11 +386,6 @@ public class HangManController {
 
     @FXML
     private Button letterZButton;
-
-    @FXML
-    void displayInstructionsOnPress(ActionEvent event) {
-
-    }
 
     // Will display the hint when the hintButton is pressed.
     @FXML
@@ -558,6 +580,7 @@ public class HangManController {
         finalDeathImage.setVisible(false);
         winLossTextField.setVisible(false);
         hintTextField.setVisible(false);
+        HangManWin.setVisible((false));
         // Adds all buttons back to original position.
         removeOrAddAllButtons(true);
 
