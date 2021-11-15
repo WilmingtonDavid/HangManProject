@@ -19,6 +19,11 @@
             <Image url="@Blue.jpeg.jpg" />
          </image>
       </ImageView>
+      <ImageView fitHeight="327.0" fitWidth="403.0" opacity="0.25">
+         <image>
+            <Image url="@Wreath.png" />
+         </image>
+      </ImageView>
       <Label layoutX="122.0" layoutY="14.0" text="Hangman Rules">
          <font>
             <Font size="23.0" />

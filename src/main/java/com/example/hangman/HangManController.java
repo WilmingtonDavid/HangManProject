@@ -17,9 +17,11 @@ import java.util.*;
 
 public class HangManController {
 
-    /* he first variable is to generate a random word and the corresponding hint. The next two are the word
-    and hint put into variables. The last is the counter to keep track of wrong guesses. */
-    private String[] wordAndHint = generateString();
+    /* The first variable is the hashmap that works as our dictionary. The second one is to generate a random word
+    and the corresponding hint. The next two are the word and hint put into variables. The last is the counter
+     to keep track of wrong guesses. */
+    HashMap<String, String> wordDictionary = generateDictionary();
+    private String[] wordAndHint = generateString(wordDictionary);
     private String wordToGuess = wordAndHint[0];
     private String hint = wordAndHint[1];
     private int counterForLoss = 0;
@@ -31,9 +33,8 @@ public class HangManController {
     private String printedWord; // The printed word is the character array converted to a string.
     char[] currentPlaceHolder = generatePlaceHolder(wordToGuess); // Generates a blank placeholder for the word.
 
-    /* This method will generate the random word/hint for the game.*/
-    public static String[] generateString() {
-        String[] finalArray = new String[2];
+    /* This function generates and returns a word dictionary with words and hints as the keys/values.*/
+    public static HashMap<String, String> generateDictionary() {
         HashMap<String, String> wordDictionary = new HashMap<String, String>();
 
         //Start Dictionary (Put words and hints inside here please. Words should be all caps.)
@@ -108,6 +109,12 @@ public class HangManController {
         wordDictionary.put("SEASON", " A time of year ");
         wordDictionary.put("WINTER", " A time of year ");
         //End Dictionary
+        return wordDictionary;
+    }
+
+    /* This method will generate the random word/hint for the game.*/
+    public static String[] generateString(HashMap<String, String> wordDictionary) {
+        String[] finalArray = new String[2];
 
         Object[] keys = wordDictionary.keySet().toArray();
         Object key = keys[new Random().nextInt(keys.length)];
@@ -563,7 +570,8 @@ public class HangManController {
     @FXML
     void newGameOnPress(ActionEvent event) {
         //set the wordAndHint to a new word from the dictionary and re-assign the word and hint.
-        wordAndHint = generateString();
+
+        wordAndHint = generateString(wordDictionary);
         wordToGuess = wordAndHint[0];
         hint = wordAndHint[1];
         counterForLoss = 0;
@@ -588,6 +596,14 @@ public class HangManController {
         currentPlaceHolder = generatePlaceHolder(wordToGuess);
         printedWord = new String(currentPlaceHolder);
         wordToGuessTextField.setText(printedWord);
+
+        // Removes the word from the dictionary so as not to repeat words.
+        wordDictionary.remove(wordToGuess, hint);
+        // If the dictionary runs out of words, the game will close.
+        if(wordDictionary.isEmpty()){
+            Stage stage = (Stage) letterAButton.getScene().getWindow();
+            stage.close();
+        }
 
     }
 
